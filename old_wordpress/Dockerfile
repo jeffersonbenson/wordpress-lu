@@ -1,5 +1,4 @@
-FROM wordpress
-#php:5.6.31-alpine
+FROM php:5.6.31
 
 MAINTAINER Jeff Benson <jbenson14@liberty.edu>
 
@@ -16,10 +15,10 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 	chmod +x wp-cli.phar && \
 	mv wp-cli.phar /usr/local/bin/wp
 
-	#wp core download --path=/var/www/html/ --locale=en_US --version=latest --force --allow-root && \
-	#wp config create --path=/var/www/html/ --dbname=wordpress --dbuser=root --dbpass=example --dbhost=192.168.2.1:3306 --allow-root && \
-	#wp core install --path=/var/www/html/ --url=localhost --debug --path=/var/www/html --title=MYAWESOMESITE --admin_user=admin --admin_email=test@testing.com --admin_password=admin --allow-root && \
-RUN	wp plugin install --activate --path=/var/www/html/ advanced-custom-fields --allow-root && \
+RUN	wp core download --path=/var/www/html/ --locale=en_US --version=latest --force --allow-root && \
+	wp config create --path=/var/www/html/ --dbname=wordpress --dbuser=root --dbpass=example --dbhost=192.168.2.1:3306 --allow-root --force --skip-check && \
+	wp core install --debug --locale=en_US --path=/var/www/html/ --title=MYAWESOMESITE --admin_user=admin --admin_email=test@testing.com --admin_password=admin --allow-root && \
+  wp plugin install --activate --path=/var/www/html/ advanced-custom-fields --allow-root && \
 	wp plugin install --activate --path=/var/www/html/ tinymce-advanced --allow-root && \
 	wp plugin install --activate --path=/var/www/html/ wordpress-seo --allow-root && \
 	wp plugin list --allow-root
