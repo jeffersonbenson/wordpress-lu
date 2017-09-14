@@ -2,15 +2,15 @@ version: '3.3'
 
 services:
     wordpress:
-        #image: wordpress
-        build: Wordpress/
+        #image: wordpress-lu
+        build: Wordpress
         links:
             - db:mysql
         restart: always
         ports:
             - 8080:80
-        #volumes:
-            #-.:/var/www/html
+        volumes:
+            -.:/var/www/html
         environment:
             WORDPRESS_DB_HOST: db
             WORDPRESS_DB_NAME: wordpress

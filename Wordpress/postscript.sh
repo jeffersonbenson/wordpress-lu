@@ -7,4 +7,4 @@ wp plugin install --activate advanced-custom-fields --path=/var/www/html --allow
 wp plugin install --activate tinymce-advanced --path=/var/www/html --allow-root && \
 wp plugin install --activate wordpress-seo --path=/var/www/html --allow-root && \
 
-wp plugin list --allow-root
+wp plugin list --path=/var/www/html --allow-root
