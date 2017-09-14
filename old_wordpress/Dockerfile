@@ -1,4 +1,4 @@
-FROM php:7.1.9-apache
+FROM php:5.6.31-apache
 
 MAINTAINER Jeff Benson <jbenson14@liberty.edu>
 
@@ -16,7 +16,7 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 	mv wp-cli.phar /usr/local/bin/wp
 
 RUN wp core download --path=/var/www/html/ --locale=en_US --version=latest --force --allow-root && \
-	wp config create --path=/var/www/html/ --dbname=mysql --dbuser=root --dbpass=example --dbhost=db --skip-salts --skip-check --force --allow-root && \
+	wp config create --path=/var/www/html/ --dbname=mysql --dbuser=root --dbpass=example --dbhost=localhost --skip-salts --skip-check --force --allow-root && \
 	wp core install --path=/var/www/html/ --url=localhost --debug --path=/var/www/html --title=MYAWESOMESITE --admin_user=admin --admin_email=test@testing.com --admin_password=admin --allow-root && \
 	wp plugin install --activate --path=/var/www/html/ advanced-custom-fields --allow-root && \
 	wp plugin install --activate --path=/var/www/html/ tinymce-advanced --allow-root && \
