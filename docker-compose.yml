@@ -2,8 +2,8 @@ version: '3.3'
 
 services:
     wordpress:
-        #image: wordpress-lu
-        build: Wordpress
+        image: wordpress-lu-dev
+        #build: Wordpress
         links:
             - db:mysql
         restart: always
@@ -16,7 +16,7 @@ services:
             WORDPRESS_DB_NAME: wordpress
             WORDPRESS_DB_USER: root
             WORDPRESS_DB_PASSWORD: example
-
+    
     db:
         #restart: unless-stopped
         image: mysql:5.7
