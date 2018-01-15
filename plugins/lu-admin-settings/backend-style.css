@@ -1,0 +1,163 @@
+#wpadminbar, 
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu .wp-submenu.sub-open, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu a.wp-has-current-submenu:focus+.wp-submenu, .no-js li.wp-has-current-submenu:hover .wp-submenu, 
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    background:#19273F;
+}
+#wpadminbar .menupop .ab-sub-wrapper, #wpadminbar .shortlink-input {
+    background:#2E4161;
+}
+#wpadminbar .ab-top-menu>li.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus,
+#wpadminbar .quicklinks .menupop ul.ab-sub-secondary, #wpadminbar .quicklinks .menupop ul.ab-sub-secondary .ab-submenu {
+    background:#0B1D3A;
+}
+
+/* custom bar logo */
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item .ab-icon:before { 
+    content: "";
+    background: url("https://www.liberty.edu/wwwadmin/globals/globalheader/icons/LU-Monogram.svg") center center no-repeat !important;
+    background-position: 0 0;
+    width: 26px;
+    height: 22px;
+    display: block;
+}
+#wpadminbar .quicklinks li .blavatar:before {
+    content: "";
+    background: url("https://www.liberty.edu/wwwadmin/globals/globalheader/icons/LU-Monogram.svg") center center no-repeat !important;
+    background-position: 0 0;
+    background-size:cover;
+    height: 22px;
+    width: 26px; 
+    display: block;   
+    margin-top:0;
+}
+#wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
+background-position: 0 0;
+}   
+#wpadminbar #wp-admin-bar-wp-logo>.ab-item {
+    padding: 0 10px;
+}
+#wpadminbar li#wp-admin-bar-wp-logo.hover>.ab-sub-wrapper, #wpadminbar.nojs li#wp-admin-bar-wp-logo:hover>.ab-sub-wrapper {
+    display:none!important;
+}
+
+#wp-admin-bar-comments {
+    display:none;
+}
+
+#contextual-help-link-wrap {
+    display:none!important;
+}
+
+/*td.column-title strong, td.plugin-title strong {
+    float:left;
+    margin-right:20px;
+}
+.row-actions {
+    display:inline-block;
+    padding-top:0;
+}*/
+
+
+
+/* Admin Button Styles */
+.wp-core-ui .button, 
+.wp-core-ui .button-primary, 
+.wp-core-ui .button-secondary {
+    border-radius:2px;
+}
+.wp-core-ui .button-primary {
+    background:#2773cb;
+    border:none;
+    text-shadow:none;
+}
+.wp-core-ui .button-group.button-large .button, 
+.wp-core-ui .button.button-large {
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:3px;
+    height: 40px;
+}
+.wp-core-ui .button-primary.focus, 
+.wp-core-ui .button-primary.hover, 
+.wp-core-ui .button-primary:focus, 
+.wp-core-ui .button-primary:hover {
+    background:#1f6cc5;
+}
+#save-action input {
+    color:#fff;
+    border:none;
+    box-shadow:none;
+    background:#b8860b;
+}
+
+#delete-action {
+    line-height: 40px;
+}
+
+
+
+
+/* The switch - the box around the slider */
+.switcher {
+    margin-bottom:5px;
+    display:inline-block;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-left:10px;
+  margin-bottom:-5px;
+}
+
+/* Hide default HTML checkbox */
+.switcher input {display:none;}
+
+/* The slider */
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switcher input:checked + .switch .slider {
+  background-color: #2196F3;
+}
+
+.switcher input:focus + .switch .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.switcher input:checked + .switch .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.switch .slider.round {
+  border-radius: 34px;
+}
+
+.switch .slider.round:before {
+  border-radius: 50%;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>tooltip sample</title>
+</head>
+<body>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aspernatur atque laboriosam, minima, quae ea, debitis saepe fugiat id pariatur, tempore voluptatum consectetur! Voluptatibus culpa quidem impedit, debitis exercitationem. Cum.</p>
+	<p>Omnis nemo voluptates sunt alias fuga modi possimus assumenda impedit reiciendis temporibus, facilis placeat atque nobis itaque ex delectus voluptatibus consectetur similique amet natus libero provident, ipsa distinctio. Alias, nesciunt.</p>
+	<p>Libero fugiat molestiae cupiditate magni qui nam officia nemo harum adipisci dolore veritatis, aperiam molestias neque beatae omnis quo esse culpa architecto accusantium possimus odit quae, voluptatibus. Neque, nemo aperiam.</p>
+	<p>Earum et unde aut expedita, laudantium veritatis atque eveniet, temporibus ipsa perspiciatis, iste sed quia, error voluptatem aspernatur minima nostrum explicabo assumenda commodi est illo eaque sapiente accusantium aperiam. Porro.</p>
+	<p>Sequi minima accusantium ea consequuntur sunt aperiam, eius dolorem nemo, sapiente, molestias adipisci aspernatur quas blanditiis itaque incidunt laborum. Blanditiis quia pariatur dicta sint saepe sequi temporibus aut odio, assumenda?</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, pariatur, unde. Quasi, officiis. Excepturi libero, illo nam, numquam quis sit fugit. Quibusdam facere fugit inventore, sed non pariatur, veniam <label class="opentooltip"><input type="checkbox" name="tip1">im the word<span class="tooltip">im the definition</span></label> laudantium.</p>
+
+
+
+
+<style>
+
+.opentooltip{
+	position: relative;
+	font-weight: bold;
+	/*so small it might disappear if we use rem and font size shrinks*/
+    border-bottom: 2px dashed #CDCDCD;
+    text-decoration: none;
+}
+.opentooltip input[type=checkbox], .tooltip{
+	display: none;
+}
+.tooltip{
+	font-weight: normal;
+	box-shadow: 0 2px 4px 0px #101010;
+	border-radius: 2px;
+	position: absolute;
+	background-color: #fff;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: calc(100% + 7px);
+	padding: 20px;
+}
+
+.tooltip:after, .tooltip:before {
+	top: 100%;
+	left: 30px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.tooltip:after{
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #fff;
+	border-width: 7px;
+	margin-left: -7px;
+}
+.tooltip:before{
+	border-color: rgba(0, 0, 0, 0);
+	border-top-color: rgba(0, 0, 0, .32);/*not actually a shadow here. shh...*/
+	border-width: 9px;
+	margin-left: -9px;
+}
+.opentooltip input[type=checkbox]:checked + .tooltip{
+	display: inline-block;
+}
+
+</style>
+
+
+
+
+
+
+</body>
+</html>
